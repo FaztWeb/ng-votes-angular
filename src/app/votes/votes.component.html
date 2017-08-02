@@ -1,0 +1,42 @@
+<form class="ui form">
+    <h3 class="ui header">{{title}}</h3>
+
+    <div class="field">
+        <label for="title">Title: </label>
+        <input 
+            #newtitle
+            placeholder="Add a Title"
+            type="text" name="title"/>
+    </div>
+
+    <div class="field">
+        <label for="link">Link: </label>
+        <input
+            placeholder="Add the Link"
+            #newlink 
+            type="text" name="link">
+    </div>
+
+    <button 
+        class="ui primary button"
+        (click)="addArticle(newtitle, newlink)" 
+        type="submit">
+        Add Link
+    </button>
+
+</form>
+
+<div class="ui">
+    <article
+        *ngFor="let article of sortedArticles(); let i= index"
+        [article]="article"
+        >
+    </article>
+</div>
+
+<!--
+    # this syntaxt "bind" the input to a variable
+    #newtitle is a "resolve", makes this variable
+    available inside this view 
+    it represents an input DOM element, that is an object
+-->

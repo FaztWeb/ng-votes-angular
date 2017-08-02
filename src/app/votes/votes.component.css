@@ -1,0 +1,8 @@
+form {
+    background-color: white;
+    padding: 30px;
+}
+
+button.primary.button {
+    border-radius: 0px;
+}
